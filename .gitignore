@@ -1,12 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# Python 相关
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -20,152 +16,137 @@ parts/
 sdist/
 var/
 wheels/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# 虚拟环境
+venv/
+env/
+ENV/
+.env/
+.venv/
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# IDE 配置文件
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
+# 日志和数据库
 *.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+*.sqlite3
+*.db
+*.sql
 
-# Flask stuff:
-instance/
-.webassets-cache
+# 缓存和临时文件
+*.cache
+*.tmp
+*.temp
+.cache/
+.temp/
 
-# Scrapy stuff:
-.scrapy
+# 配置文件（可根据需要调整）
+config.yaml
+secrets.yaml
+*.env
+*.secret
 
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
+# 测试相关
+.coverage
+htmlcov/
+.pytest_cache/
+test-results/
+*.xml
+*.trx
 
 # Jupyter Notebook
-.ipynb_checkpoints
+.ipynb_checkpoints/
+*.ipynb
 
-# IPython
-profile_default/
-ipython_config.py
+# 文档生成
+docs/_build/
+docs/_static/
+docs/_templates/
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# 打包和发布
+*.whl
+*.tar.gz
+*.zip
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
+# 其他
+*.bak
+*.swp
+*.swo
+*~
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
+---
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
+### 说明
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+1. **Python 相关文件**
+   - 排除了 Python 编译生成的缓存文件（如 `__pycache__`、`*.pyc` 等）。
+   - 排除了构建和分发目录（如 `build/`、`dist/`、`*.egg-info/` 等）。
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+2. **虚拟环境**
+   - 排除了常见的虚拟环境目录（如 `venv/`、`.venv/`、`env/` 等），避免将虚拟环境中的依赖提交到仓库。
 
-# SageMath parsed files
-*.sage.py
+3. **IDE 配置文件**
+   - 排除了常见 IDE（如 VS Code、PyCharm）的配置文件，避免不同开发者的 IDE 配置冲突。
 
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+4. **日志和数据库**
+   - 排除了日志文件（如 `*.log`）和本地数据库文件（如 `*.sqlite3`、`*.db` 等），避免提交敏感数据或不必要的文件。
 
-# Spyder project settings
-.spyderproject
-.spyproject
+5. **缓存和临时文件**
+   - 排除了缓存文件和临时文件（如 `*.cache`、`*.tmp` 等）。
 
-# Rope project settings
-.ropeproject
+6. **配置文件**
+   - 排除了配置文件（如 `config.yaml`、`secrets.yaml`），避免提交包含敏感信息的配置文件。如果需要共享配置模板，可以提交一个示例文件（如 `config.example.yaml`）。
 
-# mkdocs documentation
-/site
+7. **测试相关**
+   - 排除了测试生成的覆盖率报告和缓存文件（如 `.coverage`、`htmlcov/`、`.pytest_cache/`）。
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+8. **Jupyter Notebook**
+   - 排除了 Jupyter Notebook 的缓存目录（如 `.ipynb_checkpoints/`）和 Notebook 文件（如 `*.ipynb`）。
 
-# Pyre type checker
-.pyre/
+9. **文档生成**
+   - 排除了文档生成工具（如 Sphinx）生成的构建目录（如 `docs/_build/`）。
 
-# pytype static type analyzer
-.pytype/
+10. **打包和发布**
+    - 排除了打包生成的文件（如 `*.whl`、`*.tar.gz`、`*.zip`）。
 
-# Cython debug symbols
-cython_debug/
+11. **操作系统生成的文件**
+    - 排除了操作系统生成的文件（如 `.DS_Store`、`Thumbs.db`、`desktop.ini`）。
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+12. **其他**
+    - 排除了备份文件（如 `*.bak`）、编辑器临时文件（如 `*.swp`、`*.swo`）和其他临时文件（如 `*~`）。
 
-# PyPI configuration file
-.pypirc
+---
+
+### 如何使用
+
+1. 在 GCSS 项目的根目录下创建一个名为 `.gitignore` 的文件。
+2. 将上述内容复制到 `.gitignore` 文件中。
+3. 根据你的项目需求，调整 `.gitignore` 文件的内容。例如，如果你使用了其他工具或框架，可以添加相应的规则。
+
+### 注意事项
+
+- 如果你已经将某些文件提交到了 Git 仓库，再添加到 `.gitignore` 中并不会自动删除这些文件。你需要手动从 Git 中移除这些文件：
+  ```bash
+  git rm --cached <file>
+  ```
+  例如：
+  ```bash
+  git rm --cached config.yaml
+  ```
+
+- 如果你希望共享配置文件模板，可以将 `config.yaml` 重命名为 `config.example.yaml`，并在 `.gitignore` 中排除 `config.yaml`，同时提交 `config.example.yaml`。
