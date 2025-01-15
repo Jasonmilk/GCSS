@@ -24,11 +24,23 @@ GCSS 的架构设计围绕四个核心模块：情境感知 (CA)、目标管理 
 
 ```mermaid
 graph TD
+  CA[Context Analyzer] --> GM[Goal Manager]
+  GM --> BE[Behavior Evaluator]
+  BE --> DE[Decision Executor]
+  DE --> CA
+```
+
+```
+graph TD
   CA[情境感知 (Context Analyzer)] --> GM[目标管理 (Goal Manager)]
   GM --> BE[行为评估 (Behavior Evaluator)]
   BE --> DE[决策执行 (Decision Executor)]
   DE --> CA
 ```
+
+
+
+
 
 ### 模块功能
 
